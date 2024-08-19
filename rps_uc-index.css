@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* VARIABLES */
+:root {
+    /* color */
+    --BGCOLOR: #6943FF;
+    --L-BGCOLOR: #5A537B;/*units title color*/
+    --BORDER-COLOR: #B295FF;
+    --WHITE: white;
+    --CHANGING-WHITE: white;
+    --L-WHITE: #f4f4f4;
+    --CHANGING-L-WHITE: #f4f4f4;
+    --GRAY: #3D3D3D; /*inside button text color*/
+    --ALT-GRAY: #353535; /*paras text color*/
+    /* FONTS */
+    --INTER: "Inter", sans-serif;
+    /* SIZES */
+    --XXL: 58px;
+}
+:root.dark {
+    /* color */
+    --L-BGCOLOR: #CCC1FF;
+    --CHANGING-WHITE: #273549;
+    --CHANGING-L-WHITE: #1F2937;
+    --ALT-GRAY: #fff;
+}
+
+/* GENERAL STYLES */
+body {
+    text-align: center;
+    padding: 1.5rem;
+    font-family: var(--INTER);
+}
+header {
+    background-color: var(--BGCOLOR);
+    color: var(--WHITE);
+}
+header input {
+    border: 2px var(--BORDER-COLOR);
+    border-radius: 2px;
+    padding: 0.5rem;
+    font-size: var(--XXL);
+    font-weight: bolder;
+}
+header>button {
+    border: none;
+    border-radius: 2px;
+    background-color: var(--WHITE);
+    color: var(--GRAY);
+}
