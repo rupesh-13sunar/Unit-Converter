@@ -4,28 +4,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter - RuSu</title>
     <link rel="stylesheet" href="rps_uc-index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <header>
             <h2 class="white large">Metric/Imperial Unit Conversion</h2>
             <label for="unit-input">
-                <input type="text" value="20" class="block">
+                <input type="number" value="10" class="block" id="unit-input" autofocus>
             </label>
-            <button class="white-bg block">Convert</button>
+            <button class="white-bg block" id="convert-btn" onclick="mainProcess()">Convert</button>
     </header>
     <main class="light-white-bg">
         <div class="units-group">
-            <h4>Length (Metre/Feet)</h4>
+            <h4>Length (Metre <span class="material-symbols-outlined">sync_alt</span> Feet)</h4>
             <p class="units-result" id="length">Length</p>
         </div>
         <div class="units-group">
-            <h4>Volume (Litres/Gallons)</h4>
+            <h4>Volume (Litres <span class="material-symbols-outlined">sync_alt</span> Gallons)</h4>
             <p class="units-result" id="volume">Volume</p>
         </div>
         <div class="units-group">
-            <h4>Mass (Kilograms/Pounds)</h4>
+            <h4>Mass (Kilograms <span class="material-symbols-outlined">sync_alt</span> Pounds)</h4>
             <p class="units-result" id="mass">Mass</p>
         </div>
     </main>
+    <section class="float-container">
+        <!-- <button class="float" onclick="changeTheme()">
+        </button> -->
+        <button class="float" onclick="changeTheme('dark')">
+            <span class="material-symbols-outlined">light_mode</span>
+            <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+    </section>
+    <script src="rps_uc-index.js"></script>
 </body>
 </html>
