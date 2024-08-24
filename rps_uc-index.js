@@ -17,38 +17,54 @@ const length = document.getElementById("length");
 const volume = document.getElementById("volume");
 const mass = document.getElementById("mass");
 /////converison function
-//length
-const mToFt = x => {
-    let y = (x * 3.28084);
-    y = parseFloat(y.toFixed(3));
-    return y;
+    //length
+    const mToFt = x => {
+        let y = (x * 3.28084);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+    const ftToM = x => {
+        let y = (x / 3.28084);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+    //volume
+    const ltrToGln = x => {
+        let y = (x * 0.2199693);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+    const glnToLtr = x => {
+        let y = (x / 0.2199693);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+    //mass
+    const kgToLbs = x => {
+        let y = (x * 2.204623);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+    const lbsToKg = x => {
+        let y = (x / 2.204623);
+        y = parseFloat(y.toFixed(3));
+        return y;
+    };
+/////
+function lengthData() {
+    let a = input.valueAsNumber;
+    let tempData = `${a} metres = ${mToFt(a)} feets | ${a} feets = ${ftToM(a)} metres`;
+    length.textContent = tempData;
 };
-const ftToM = x => {
-    let y = (x / 3.28084);
-    y = parseFloat(y.toFixed(3));
-    return y;
+function volumeData() {
+    let a = input.valueAsNumber;
+    let tempData = `${a} litres = ${ltrToGln(a)} gallons | ${a} gallons = ${glnToLtr(a)} litres`;
+    volume.textContent = tempData;
 };
-//volume
-const ltrToGln = x => {
-    let y = (x * 0.2199693);
-    y = parseFloat(y.toFixed(3));
-    return y;
-};
-const glnToLtr = x => {
-    let y = (x / 0.2199693);
-    y = parseFloat(y.toFixed(3));
-    return y;
-};
-//mass
-const kgToLbs = x => {
-    let y = (x * 2.204623);
-    y = parseFloat(y.toFixed(3));
-    return y;
-};
-const lbsToKg = x => {
-    let y = (x / 2.204623);
-    y = parseFloat(y.toFixed(3));
-    return y;
+function massData() {
+    let a = input.valueAsNumber;
+    let tempData = `${a} kilograms = ${kgToLbs(a)} pounds | ${a} pounds = ${lbsToKg(a)} kilograms`;
+    mass.textContent = tempData;
 };
 /////////////////////////////
 /* function mainProcess() {
@@ -117,5 +133,11 @@ const lbsToKg = x => {
 */
 ////////////////////////////
 function mainProcess() {
+    length.textContent = "";
+    volume.textContent = "";
+    mass.textContent = "";
 
+    lengthData();
+    volumeData();
+    massData();
 };
